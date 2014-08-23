@@ -424,6 +424,103 @@
     \includegraphics[width=.85\paperwidth]{diagrams/make_workflow_simulation}}
 \end{frame}
 
+\begin{frame}
+  \hero{Workflows\\[-.7ex]\color{b-green} make}
+  \lowerhalf{Why doesn't everyone use this all the time?}
+  \note{
+    The good:
+
+    \begin{itemize}
+    \item we end up with a nice definition of "upstream" sources.
+    \item once in place, things run nicely, and have a good chance of
+      working elsewhere
+    \item a bit of thought helps to separate "inputs" (things that you
+      provide) and generated content that you should be able to blow
+      away.  This is really important.
+    \end{itemize}
+
+    The bad:
+    \begin{itemize}
+    \item put up a picture of our makefile
+    \item Pretty arcane
+    \item basically needs replacing with something pleasant, R-ish, and
+      enjoyable to use 
+    \item knitr's caching can do this to some degree, but I find it fragile.
+    \end{itemize}
+  }
+\end{frame}
+
+\begin{frame}
+  \hero{Workflows\\[-.7ex]\color{b-green} make}
+  \lowerhalf{Prospects?}
+  \note{
+    \begin{itemize}
+    \item where I hope we can go is a declarative style ``this function
+      depends on these things and produces this thing'' that can be used
+      to stick together complex analyses.
+    \item otherwise I consider this one unsolved for current non-computer
+      scientists.
+    \end{itemize}
+  }
+\end{frame}
+
+\begin{frame}
+  \hero{Continuous\\[-.7ex]integration\\[-.4ex]\color{b-pink} travis-CI}
+  \lowerhalf{Will it work elsewhere?}
+  \bottomleft{\href{http://travis-ci.org}{http://travis-ci.org}}
+  \note{
+    Getting into extra-for-experts territory here
+
+    Basic workflow:
+
+    \begin{enumerate}
+    \item Make changes
+    \item Check things look OK locally
+    \item Push to github
+    \item Travis spins up (show a few snippets from the logs)
+    \item If there's a problem you get an email (ideally show how this
+      works with the link in the email, the changeset, etc).
+    \end{enumerate}
+
+    The good:
+
+    I think that this is the future.  If we'd been using this from the
+    beginning, we'd have noticed lots of problems that affected us
+    later.
+
+    Because you find out as soon as things break, you only have to
+    look at a small set of changes.  If you're regularly breaking one
+    thing you know where you need to put your time.
+
+    You can collect the output from each run and store them somewhere
+    - can turn this into a virtual lab notebook!
+
+    The bad:
+
+    \begin{itemize}
+    \item not a perfect fit to research
+    \item open source public projects only
+    \item not going to work with sensitive data
+    \item not going to work with long running jobs
+    \item what if your research requires running on a cluster for a month?
+    \end{itemize}
+
+    Prospects:
+
+    CI platforms focussed on research probably not far away.
+    Several self-hosted solutions that institutions could easily set up
+    if there is interest
+    \begin{itemize}
+    \item Atlassian Bamboo CI (Sydney)
+    \item Jenkins
+    \item Drone
+    \end{itemize}
+    Pay for a hosted solution, host on digital ocean, etc.
+  }
+\end{frame}
+
+
+
 \end{document}
 
 %%% Local Variables: 
