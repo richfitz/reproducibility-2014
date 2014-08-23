@@ -1,0 +1,93 @@
+\documentclass[20pt]{beamer}
+\usepackage{moresize}
+\usepackage{setspace}
+
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc}
+% Useful for pictures.
+\tikzstyle{nopadding} = [inner sep=0cm]
+
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text} % enable -- / --- / `` / ''
+\setsansfont[ItalicFont={* Light},BoldItalicFont={* ExtraLight}]{Yanone Kaffeesatz}
+\setmonofont[Scale=0.75]{Menlo}
+
+\definecolor{b-blue}{HTML}{6baed6}
+\definecolor{b-darkgrey}{HTML}{2D2D2D}
+\definecolor{b-grey}{HTML}{969696}
+\definecolor{b-purple}{HTML}{9e9ac8}
+\definecolor{b-green}{HTML}{74c476}
+\definecolor{b-pink}{HTML}{e377c2}
+\definecolor{b-orange}{HTML}{FD8D3C}
+
+% Really this should be done by grabbing beamers title I guess.
+\newcommand{\hero}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]%
+  \node[anchor=west,align=left,font=\Huge] (A) at ($(current page.west) + (0.05\paperwidth, .17\paperheight)$) {%
+    #1
+  };
+\end{tikzpicture}}
+
+\newcommand{\lowerhalf}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node[anchor=west,font=\normalsize, align=left] at
+    ($(current page.west) + (0.05\paperwidth, -.25\paperheight)$) {%
+      #1
+    };
+  \end{tikzpicture}
+}
+
+\begin{document}
+
+\setbeamercolor*{palette primary}{fg=white,bg=b-darkgrey}
+\setbeamercolor*{titlelike}{parent=palette primary}
+\setbeamercolor*{normal text}{parent=palette primary}
+\color{white}
+
+\begin{frame}
+  \color{b-blue}
+  \begin{tikzpicture}[remember picture, overlay]
+    \node (A) at ($(current page.center) + (0, .17\paperheight)$) {
+      \resizebox{.9\paperwidth}{!}{%
+        \bf Reproducible research}
+    };
+    \node[anchor=north] at (A.south) {
+      \resizebox{.9\paperwidth}{!}{%
+        current challenges and future prospects}
+    };
+    \color{white}
+    \node[anchor=south west] (B) at
+    ($(current page.south west) + (0.05\paperwidth, 0.05\paperwidth)$) {
+      \color{b-grey}@phylorich
+    };
+    \node[anchor=south west] at (B.north west) {
+      Rich FitzJohn
+    };
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+  \hero{\bf R can be\\[-.7ex] \bf \color{b-pink} Irreproducible}
+  \lowerhalf{
+    \only<1>{\texttt{setwd({\color{b-orange}"myproject/final2/works"})}}%
+    \only<2>{Graphs that need manual tweaking}%
+    \only<3>{Manually edit your input}%
+    \only<4>{Undocumented dependencies}%
+  }
+\end{frame}
+
+\begin{frame}
+  \hero{\bf R can be\\[-.7ex] \bf \color{b-green} Reproducible}
+\end{frame}
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% TeX-engine: xetex
+%%% End: 
