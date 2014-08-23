@@ -1,0 +1,33 @@
+\usepackage{relsize}
+
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text} % enable -- / --- / `` / ''
+\setsansfont[ItalicFont={* Light},BoldItalicFont={* ExtraLight}]{Yanone Kaffeesatz}
+\setmonofont[Scale=0.75]{Menlo}
+
+\usepackage{xcolor}
+\definecolor{b-blue}{HTML}{6baed6}
+\definecolor{b-darkgrey}{HTML}{2D2D2D}
+\definecolor{b-grey}{HTML}{969696}
+\definecolor{b-purple}{HTML}{9e9ac8}
+\definecolor{b-green}{HTML}{74c476}
+\definecolor{b-pink}{HTML}{e377c2}
+\definecolor{b-orange}{HTML}{FD8D3C}
+
+\usepackage{fancyvrb}
+\fvset{fontsize=\relsize{-1},commandchars=\\\{\}}
+
+\makeatletter
+\newif\ifFV@bgcolor
+\newbox\FV@bgbox
+\define@key{FV}{bgcolor}{\FV@bgcolortrue\def\FV@bgcolor{#1}}
+
+\def\FV@BeginVBox{%
+  \leavevmode\ifFV@bgcolor\setbox\FV@bgbox=\fi
+  \hbox\ifx\FV@boxwidth\relax\else to\FV@boxwidth\fi\bgroup
+  \ifcase\FV@baseline\vbox\or\vtop\or$\vcenter\fi\bgroup}
+\def\FV@EndVBox{\egroup\ifmmode$\fi\hfil\egroup
+  \ifFV@bgcolor\colorbox{\FV@bgcolor}{\box\FV@bgbox}\fi}
+\makeatother
+
+\color{white}

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="795.87305"
+   height="376.54858"
+   id="svg3135"
+   version="1.1"
+   inkscape:version="0.48.2 r9819"
+   sodipodi:docname="version_control_add_commit.svg">
+  <defs
+     id="defs3137">
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Lend"
+       style="overflow:visible">
+      <path
+         id="path4001"
+         style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="418.45378"
+     inkscape:cy="140.66547"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1247"
+     inkscape:window-height="675"
+     inkscape:window-x="105"
+     inkscape:window-y="15"
+     inkscape:window-maximized="0"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       orientation="1,0"
+       position="48.487322,90.913728"
+       id="guide4363" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="338.57143,398.57143"
+       id="guide4365" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="630.71428,395"
+       id="guide4367" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata3140">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(144.83653,-298.15274)">
+    <rect
+       style="fill:#6baed6;fill-opacity:1;stroke:none;stroke-width:1.48681557000000009;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3143"
+       width="211.94176"
+       height="177.65605"
+       x="-144.07971"
+       y="298.8967" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-118.10886"
+       y="407.57675"
+       id="text3145"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3147"
+         x="-118.10886"
+         y="407.57675"
+         style="font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;fill-opacity:1;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz">Version 1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz"
+       x="-98.994949"
+       y="516.98132"
+       id="text4443"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4445"
+         x="-98.994949"
+         y="516.98132">Who</tspan><tspan
+         sodipodi:role="line"
+         x="-98.994949"
+         y="566.98132"
+         id="tspan4447">Why</tspan><tspan
+         sodipodi:role="line"
+         x="-98.994949"
+         y="616.98132"
+         id="tspan4449">When</tspan><tspan
+         sodipodi:role="line"
+         x="-98.994949"
+         y="666.98132"
+         id="tspan4451">Why</tspan></text>
+  </g>
+</svg>
