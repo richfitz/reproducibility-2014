@@ -519,7 +519,29 @@
   }
 \end{frame}
 
+\begin{frame}
+  \only<2>{\herohigh{knitr}}%
+  \only<1>{\herohigh{GNU make}}%
+  \only<3>{\herohigh{git}}%
+  \only<4>{\herohigh{travis-ci}}%
+  \bottomhalf{%
+    \includegraphics<2>[width=.85\paperwidth]{diagrams/process_knitr}%
+    \includegraphics<1>[width=.85\paperwidth]{diagrams/process_make}%
+    \includegraphics<3>[width=.85\paperwidth]{diagrams/process_git}%
+    \includegraphics<4>[width=.85\paperwidth]{diagrams/process_ci}%
+  }
+\end{frame}
 
+\begin{frame}
+  \hero{{\color{b-green}100\%}\\[-.7ex]reproducible}
+  \pause
+  \lowerhalf{probably unrealistic at the moment}
+\end{frame}
+
+\begin{frame}
+  \hero{{\color{b-green}Partially}\\[-.7ex]reproducible}
+  \lowerhalf{It's not just good -- it's good enough}
+\end{frame}
 
 \end{document}
 
