@@ -15,3 +15,7 @@ Fonts
 XeLaTeX and fontspec so that these fonts can be used
 
 Inkscape for SVG to PDF conversion (`diagrams/`).
+
+# Credits
+
+Design taken from this [great talk](http://bost.ocks.org/mike/d3/workshop/#0).
