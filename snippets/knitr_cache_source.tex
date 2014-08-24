@@ -1,0 +1,16 @@
+\documentclass[class=minimal,border=0]{standalone}
+\input{snippet}
+\begin{document}%
+\begin{BVerbatim}[bgcolor=b-darkgrey]
+\color{b-green}```\{r, {\color{b-pink}cache=TRUE}\}
+\color{b-green}fit <- mcmc(data)
+\color{b-green}for (x in fit[[1]]) \{
+\color{b-green}  for (y in fit[[2]]) \{
+\color{b-green}    for (z in fit[[3]]) \{
+\color{b-green}    ...
+\color{b-green}    \}
+\color{b-green}  \}
+\color{b-green}\}
+\color{b-green}```
+\end{BVerbatim}
+\end{document}

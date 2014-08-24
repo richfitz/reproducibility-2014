@@ -1,0 +1,11 @@
+\documentclass[class=minimal,border=0]{standalone}
+\input{snippet}
+\usepackage{graphicx}
+\begin{document}%
+\begin{BVerbatim}[bgcolor=b-darkgrey]
+\color{b-blue}Here is the input data:
+\color{b-green}plot(cars)
+\color{b-green}lines(lowess(cars), col="blue")
+\includegraphics[width=4cm]{knitr_graphics_cars}
+\end{BVerbatim}
+\end{document}

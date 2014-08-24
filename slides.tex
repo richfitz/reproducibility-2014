@@ -8,6 +8,8 @@
 \def\twitter{{\FA \faTwitter}}
 \def\heart{{\FA \faHeart}}
 \def\tickmark{{\FA \faCheck}}
+\def\rarrow{{\FA \relsize{-1}{\faArrowRight}}}
+\def\imagetop#1{\vtop{\null\hbox{#1}}}
 
 \setbeamertemplate{navigation symbols}{}
 
@@ -171,39 +173,73 @@
 \end{frame}
 
 \begin{frame}
+  \hero{{\color{b-grey}CWEB} \rarrow\\[-.7ex]%
+    \hspace{.1\textwidth}{\color{b-blue}Sweave} \rarrow\\[-.7ex]%
+    \hspace{.2\textwidth}{\color{b-orange}knitr}}
+\end{frame}
+
+\begin{frame}
   \inthemiddle{\includegraphics[height=.8\paperheight]{pics/knuth}}
   \bottomleft{Knuth, 1984}
 \end{frame}
 
 \begin{frame}[fragile]
+  \minionhigh{%
+    \only<1>{Mix documentation \& code}%
+    \only<2>{Run through knitr to run code}%
+    \only<3>{Render markdown to HTML}%
+    \only<4>{\ldots\,or to LaTeX}%
+  }
+  \bottomhalf{%
+    \includegraphics<1>[width=.6\textwidth]{snippets/knitr_source}%
+    \includegraphics<2>[width=.6\textwidth]{snippets/knitr_processed}%
+    \includegraphics<3>[width=.75\textwidth]{snippets/knitr_html}%
+    \includegraphics<4>[width=.75\textwidth]{snippets/knitr_latex}%
+  }
+\end{frame}
 
-\fvset{fontsize=\relsize{-1},commandchars=\\\{\}}
+\begin{frame}
+  \minionhigh{That's basically all there is to it}
+  \bottomhalf{%
+    \begin{tabular}{lll}
+      \raisebox{3em}{%
+        \includegraphics[width=.3\textwidth]{snippets/knitr_source}}&
+      \raisebox{1em}{%
+        \includegraphics[width=.3\textwidth]{snippets/knitr_processed}}&
+    \includegraphics[width=.375\textwidth]{snippets/knitr_html}
+    \end{tabular}
+    }
+\end{frame}
 
-%% OK, this basic approach here will work.  I might want to drop these
-%% into the snippets so that I can do some basic processing on them
-%% first though.  Ideally we can just input this stuff in directly and
-%% not tweak manually.  Before going too far, try that.
-\begin{Verbatim}
-\color{b-blue}# Markdown heading
-\color{b-blue}Treated as text
-\color{b-green}```\{r\}
-\color{b-green}x <- sample(10)
-\color{b-green}y <- sample(10)
-\color{b-green}cor(x, y)
-\color{b-green}```
-\end{Verbatim}
+\begin{frame}
+  \minionhigh{Handles graphics automatically}
+  \bottomhalf{
+    \includegraphics<1>[width=.7\textwidth]{snippets/knitr_graphics_source}%
+    \includegraphics<2>[width=.9\textwidth]{snippets/knitr_graphics_processed}%
+    \includegraphics<3>[width=.7\textwidth]{snippets/knitr_graphics_output}
+  }
+\end{frame}
 
-\begin{Verbatim}
-\color{b-blue}# Markdown heading
-\color{b-blue}Treated as text
-\color{b-green}```
-\color{b-green}x <- sample(10)
-\color{b-green}y <- sample(10)
-\color{b-green}cor(x, y)
-\color{b-grey}# [1] 0.03030303
-\color{b-green}```
-\end{Verbatim}
+\begin{frame}
+  \minionhigh{Caches long-running computation}
+  \bottomhalf{
+    \includegraphics[width=.6\textwidth]{snippets/knitr_cache_source}%
+  }
+\end{frame}
 
+\begin{frame}
+  \minionhigh{Control what is displayed}
+  \bottomhalf{
+    \begin{tabular}[t]{ll}
+      \only<1-2>{\imagetop{\includegraphics[width=.5\textwidth]{snippets/knitr_display1_source}}}%
+      \only<3-4>{\imagetop{\includegraphics[width=.5\textwidth]{snippets/knitr_display2_source}}}%
+      \only<5-6>{\imagetop{\includegraphics[width=.5\textwidth]{snippets/knitr_display3_source}}}%
+      &
+      \only<2>{\imagetop{\includegraphics[width=.5\textwidth]{snippets/knitr_display1_processed}}}%
+      \only<4>{\imagetop{\includegraphics[width=.5\textwidth]{snippets/knitr_display2_processed}}}%
+      \only<6>{\imagetop{\includegraphics[width=.5\textwidth]{snippets/knitr_display3_processed}}}%
+    \end{tabular}
+}
 \end{frame}
 
 % TODO: going to take a bit of fleshing out here.
