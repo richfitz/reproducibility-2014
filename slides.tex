@@ -278,14 +278,14 @@
 \end{frame}
 
 \begin{frame}
-  \hero{{\color{b-grey}CWEB} \rarrow\\[-.7ex]%
-    \hspace{.1\textwidth}{\color{b-blue}Sweave} \rarrow\\[-.7ex]%
-    \hspace{.2\textwidth}{\color{b-orange}knitr}}
+  \inthemiddle{\includegraphics[height=.8\paperheight]{pics/knuth}}
+  \bottomleft{Knuth, 1984}
 \end{frame}
 
 \begin{frame}
-  \inthemiddle{\includegraphics[height=.8\paperheight]{pics/knuth}}
-  \bottomleft{Knuth, 1984}
+  \hero{{\color{b-grey}CWEB} \rarrow\\[-.7ex]%
+    \hspace{.1\textwidth}{\color{b-blue}Sweave} \rarrow\\[-.7ex]%
+    \hspace{.2\textwidth}{\color{b-orange}knitr}}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -442,18 +442,18 @@
 
 \begin{frame}
   % TODO: Separate off the log/diff arrow
-  \only<1>{\herohigh{Query what changed}}%
-  \only<3>{\herohigh{git diff; git log}}
+  \only<1-2>{\herohigh{Query what changed}}%
+  \only<3>{\herohigh{git diff; git log}}%
   \bottomhalf{%
-    \includegraphics<1>[width=.75\paperwidth]{diagrams/version_control_compare}%
-    \includegraphics<2->[width=.75\paperwidth]{diagrams/version_control_compare}%
+    \includegraphics<1>[width=.75\paperwidth]{diagrams/version_control_compare1}%
+    \includegraphics<2->[width=.75\paperwidth]{diagrams/version_control_compare2}%
   }
 \end{frame}
 
 \begin{frame}
   % TODO: Split the image into sections: 6, 6->7, 6->7->6'
-  \only<1>{\herohigh{Undo mistakes}}%
-  \only<3>{\herohigh{git revert}}
+  \only<1-2>{\herohigh{Undo mistakes}}%
+  \only<3>{\herohigh{git revert}}%
   \bottomhalf{%
     \includegraphics<1>[width=.75\paperwidth]{diagrams/version_control_revert1}%
     \includegraphics<2->[width=.75\paperwidth]{diagrams/version_control_revert2}%
@@ -462,9 +462,9 @@
 
 \begin{frame}
   \herohigh{Collaboration}%
-  \only<1>{\lowerhalf{\large R + {\color{b-purple} git} = nice}}%
-  \only<2>{\lowerhalf{\large R + {\color{b-purple} git} + {\color{b-orange}GitHub} = {\color{b-pink}\heart}}}%
-  \only<3>{\lowerhalf{\large R + {\color{b-purple} git} + {\color{b-orange}BitBucket} = {\color{b-pink}\heart}}}
+  \only<1>{\lowerhalf{\LARGE R + {\color{b-purple} git} = nice}}%
+  \only<2>{\lowerhalf{\LARGE R + {\color{b-purple} git} + {\color{b-orange}GitHub} = {\color{b-pink}\heart}}}%
+  \only<3>{\lowerhalf{\LARGE R + {\color{b-purple} git} + {\color{b-orange}BitBucket} = {\color{b-pink}\heart}}}
 \end{frame}
 
 \begin{frame}
@@ -498,6 +498,48 @@
 \end{frame}
 
 \begin{frame}
+  \hero{Barriers to \color{b-purple} git}
+  \lowerhalf{%
+    \note{Git is famously difficult to learn.  There are arguably
+      easier tools out there (e.g., mercurial) but few with as wide
+      adoption by scientists.  99\% of the time, git is very easy to
+      use; add and commit, add and commit, push.}%
+    \includegraphics<1>[width=.7\paperwidth]{shots/git-hard}%
+    \only<2>{%
+      ``It is easy to shoot your foot off with git,\\[-.2ex]
+      but also easy to revert to a previous foot\\[-.2ex]
+      and merge it with your current leg.''
+    }%
+    \only<3>{%
+      \begin{minipage}{1.0\linewidth}\tt\small\raggedright
+        git rebase -s recursive -X theirs origin/master
+      \end{minipage}%
+    }%
+
+  }
+\end{frame}
+
+\begin{frame}
+  \herohigh{Barriers to \color{b-purple} git}
+  \bottomhalf{%
+    \includegraphics<1>[width=.7\paperwidth]{pics/xkcd_git_commit}%
+  }
+  \lowerhalf{%
+    \includegraphics<2>[width=.233\paperwidth]{pics/word_icon}
+    \hspace{.05\paperwidth}
+    \includegraphics<2>[width=.233\paperwidth]{pics/preview_icon}
+    \hspace{.05\paperwidth}
+    \includegraphics<2>[width=.233\paperwidth]{pics/database_icon}
+  }
+  \bottomleft{%
+    \only<1>{\href{http://xkcd.com/1296/}{http://xkcd.com/1296/}}}
+
+  \note{Git requires discipline.  It requires buy-in from all team
+    members.  It doesn't play particularly well with big binary files,
+    though it's not necessarily that bad at it for small projects.}
+\end{frame}
+
+\begin{frame}
   \hero{Version control\\[-.7ex]\color{b-purple} git}
   \lowerhalf{Prospects?}
 
@@ -514,6 +556,10 @@
       probably less easy to find people who know it.
     \item The tool shapes the hand -- this tool has changed my habits,
       and those of people I work with, more than any other tool.
+    \item All sorts of empirically focussed biologists I know have
+      started incorportating this into their work, and have seen the
+      benefits.
+    \item Getting easier through things like Rstudio's git integration.
     \end{itemize}
   }
 \end{frame}
@@ -605,8 +651,9 @@
     \item where I hope we can go is a declarative style ``this function
       depends on these things and produces this thing'' that can be used
       to stick together complex analyses.
-    \item New web package management things (e.g. ???.io) might help
+    \item New web package management things (e.g. bower.io) might help
       here.
+    \item Perhaps show where we're heading with model adequacy?
     \item otherwise I consider this one unsolved for current non-computer
       scientists.
     \end{itemize}
@@ -669,6 +716,32 @@
 \end{frame}
 
 \begin{frame}
+  \hero{Dependencies\\[-.7ex]\color{b-blue} packrat}
+  \bottomleft{\href{http://rstudio.github.io/packrat}{http://rstudio.github.io/packrat}}
+  \lowerhalf{Will it work later?}
+\end{frame}
+
+\begin{frame}
+  \inthemiddle{\includegraphics[width=\paperwidth]{pics/alice}}
+\end{frame}
+
+\begin{frame}
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[inner sep=0, outer sep=0] at (current page.center) {
+      \includegraphics[height=\paperheight]{pics/how_much_wood}
+    };
+    \node[anchor=east,align=right,font=\Large\bfseries] (A) at
+    ($(current page.east) + (-0.05\paperwidth, .17\paperheight)$) {%
+      {\color{black}How many} species are woody?
+    };
+    \node<2>[anchor=east, align=right,font=\Huge\bfseries] at
+    ($(current page.east) + (-0.15\paperwidth, -.17\paperheight)$) {%
+      46\%
+    };
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
   \only<2>{\herohigh{knitr}}%
   \only<1>{\herohigh{GNU make}}%
   \only<3>{\herohigh{git}}%
@@ -683,8 +756,15 @@
 
 \begin{frame}
   \hero{{\color{b-green}100\%}\\[-.7ex]reproducible}
-  \pause
-  \lowerhalf{probably unrealistic at the moment}
+  \lowerhalf{%
+    \only<2>{
+      \begin{minipage}{1.0\linewidth}\tt\footnotesize\raggedright
+        git clone https://github.com/richfitz/wood/\\
+        cd wood\\
+        make deps all
+      \end{minipage}
+    }
+    \only<3>{probably unrealistic at the moment}}
 \end{frame}
 
 \begin{frame}
