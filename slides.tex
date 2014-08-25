@@ -3,6 +3,7 @@
 \usepackage{setspace}
 \usepackage{fancyvrb}
 \usepackage{relsize}
+\usepackage{array}
 \usepackage{fontawesome}
 \newfontfamily{\FA}{FontAwesome}
 \def\twitter{{\FA \faTwitter}}
@@ -31,6 +32,14 @@
 \definecolor{b-green}{HTML}{74c476}
 \definecolor{b-pink}{HTML}{e377c2}
 \definecolor{b-orange}{HTML}{FD8D3C}
+
+% Neutralise underscores, since we don't use them apart for in URLs
+\catcode`_=12
+\begingroup\lccode`~=`_\lowercase{\endgroup\let~\sb}
+\mathcode`_="8000
+
+\newcommand{\hrefp}[2]{\href{#1://#2}{#2}}
+\newcommand{\twitterhandle}[1]{\href{https://twitter.com/#1}{@#1}}
 
 % Really this should be done by grabbing beamers title I guess.
 \newcommand{\hero}[1]{%
@@ -116,7 +125,7 @@
 
 \newcommand{\bottomhangingleft}[1]{%
   \begin{tikzpicture}[remember picture, overlay]%
-    \node[anchor=north west] at
+    \node[anchor=north west,align=left] at
     ($(current page.west) + (0.05\paperwidth, .17\paperheight)$) {
       #1
     };
@@ -124,6 +133,8 @@
 }
 
 \begin{document}
+
+% TODO: attribution on photos
 
 \setbeamercolor*{palette primary}{fg=white,bg=b-darkgrey}
 \setbeamercolor*{titlelike}{parent=palette primary}
@@ -149,7 +160,7 @@
     \color{white}
     \node[anchor=south west] (B) at
     ($(current page.south west) + (0.05\paperwidth, 0.05\paperwidth)$) {
-      \color{b-grey}\href{https://twitter.com/phylorich}{@phylorich}
+      \color{b-grey}\twitterhandle{phylorich}
     };
     \node[anchor=south west] at (B.north west) {
       Rich FitzJohn
@@ -214,14 +225,14 @@
     probably going to be reproducible.  On the other hand, if you're
     working with GB of data from various sources, using a cluster for
     computing, dealing with sensitive data, working with closed source
-    or difficult to compile software, reproducibility is going to be
-    hard.
+    or difficult to obtain/compile or platform dependent software,
+    reproducibility is going to be hard.
   }
 \end{frame}
 
-% TODO: Need some colour here?
 \begin{frame}
-  \herohigh{Simple case of\\[-.7ex]reproducible research}
+  {\color{b-blue}
+  \herohigh{Simple case of\\[-.7ex]reproducible research}}
 
   \lowerhalf{
     \begin{minipage}{\textwidth}
@@ -247,7 +258,6 @@
   \end{tikzpicture}
 \end{frame}
 
-% TODO: true diversity should be in grey.
 \begin{frame}
   \inthemiddle{%
     \includegraphics<1>[width=.9\paperwidth]{diagrams/diversity_venn0}%
@@ -295,7 +305,7 @@
 
 \begin{frame}
   \hero{Literate programming\\[-.7ex]\color{b-orange} knitr}
-  \bottomleft{\href{http://yihui.name/knitr}{http://yihui.name/knitr}}
+  \bottomleft{\href{http://yihui.name/knitr}{yihui.name/knitr}}
   \lowerhalf{What are we trying to make work?}
   \note{
     Knitr is the poster child of reproducible research in R.
@@ -309,7 +319,7 @@
 \end{frame}
 
 \begin{frame}
-  \inthemiddle{\includegraphics[height=.8\paperheight]{pics/knuth}}
+  \inthemiddle{\includegraphics[height=\paperheight]{pics/knuth}}
   \bottomleft{Knuth, 1984}
 \end{frame}
 
@@ -449,9 +459,9 @@
 \end{frame}
 
 \begin{frame}
-  \hero{Verson control\\[-.7ex]\color{b-purple}{git}}
+  \hero{Version control\\[-.7ex]\color{b-purple}{git}}
   \lowerhalf{I swear it used to work}
-  \bottomleft{\href{http://git-scm.com}{http://git-scm.com}}
+  \bottomleft{\href{http://git-scm.com}{git-scm.com}}
   \bottomright{See also\\[-.2ex]\href{http://mercurial.selenic.com}{\color{b-purple}\small mercurial}}
 
   \note{This is in here even though it's entirely orthoganal to
@@ -467,7 +477,7 @@
 
 \begin{frame}
   \herohigh{Store metadata\phantom{y}}
-  \bottomhalf{\includegraphics[width=.75\paperwidth]{diagrams/version_control_metadata}}
+  \bottomhanging{\includegraphics[width=.75\paperwidth]{diagrams/version_control_metadata}}
 \end{frame}
 
 \begin{frame}
@@ -477,7 +487,6 @@
 \end{frame}
 
 \begin{frame}
-  % TODO: Separate off the log/diff arrow
   \only<1-2>{\herohigh{Query what changed}}%
   \only<3>{\herohigh{git diff; git log}}%
   \bottomhanging{%
@@ -487,7 +496,6 @@
 \end{frame}
 
 \begin{frame}
-  % TODO: Split the image into sections: 6, 6->7, 6->7->6'
   \only<1-2>{\herohigh{Undo mistakes}}%
   \only<3>{\herohigh{git revert}}%
   \bottomhanging{%
@@ -499,8 +507,8 @@
 \begin{frame}
   \herohigh{Collaboration}%
   \only<1>{\lowerhalf{\LARGE R + {\color{b-purple} git} = nice}\phantom{\heart}}%
-  \only<2>{\lowerhalf{\LARGE R + {\color{b-purple} git} + {\color{b-orange}GitHub} = {\color{b-pink}\heart}}}%
-  \only<3>{\lowerhalf{\LARGE R + {\color{b-purple} git} + {\color{b-orange}BitBucket} = {\color{b-pink}\heart}}}
+  \only<2>{\lowerhalf{\LARGE R + {\color{b-purple} git} + {\color{b-orange}BitBucket} = {\color{b-pink}\heart}}}
+  \only<3>{\lowerhalf{\LARGE R + {\color{b-purple} git} + {\color{b-orange}GitHub} = {\color{b-pink}\heart}}}%
 \end{frame}
 
 \begin{frame}
@@ -536,21 +544,21 @@
 \begin{frame}
   \herohigh{Barriers to \color{b-purple} git}
   \bottomhanging{%
-    \includegraphics<1>[width=.7\paperwidth]{shots/git-hard}%
-    \only<2>{
+    \only<1>{
       \begin{minipage}{1.0\linewidth}\color{b-blue}
         ``It is easy to shoot your foot off with git,\\[-.2ex]
         but also easy to revert to a previous foot\\[-.2ex]
         and merge it with your current leg.''
       \end{minipage}
     }%
-    \only<3>{%
+    \only<2>{%
       \begin{minipage}{1.0\linewidth}\tt\small\raggedright
-        git rebase -s recursive -X theirs origin/master
+        git rebase -s recursive -X theirs\\
+        \qquad origin/master
       \end{minipage}%
     }%
   }
-  \only<2>{\bottomleft{Jack William Bell: http://perl.plover.com/classes/git/samples/slide034.html}}
+  \only<1>{\bottomleft{Jack William Bell: http://perl.plover.com/classes/git/samples/slide034.html}}
 \end{frame}
 
 \begin{frame}
@@ -573,6 +581,7 @@
     though it's not necessarily that bad at it for small projects.}
 \end{frame}
 
+% TODO: Get something here, or drop this slide
 \begin{frame}
   \hero{Version control\\[-.7ex]\color{b-purple} git}
   \lowerhalf{Prospects?}
@@ -588,12 +597,12 @@
       self-hosting are less popular still.
     \item alternatives exist: Mercurial is another great VC platform, but
       probably less easy to find people who know it.
-    \item The tool shapes the hand -- this tool has changed my habits,
-      and those of people I work with, more than any other tool.
     \item All sorts of empirically focussed biologists I know have
       started incorportating this into their work, and have seen the
       benefits.
     \item Getting easier through things like Rstudio's git integration.
+    \item The tool shapes the hand -- this tool has changed my habits,
+      and those of people I work with, more than any other tool.
     \end{itemize}
   }
 \end{frame}
@@ -633,9 +642,9 @@
 \end{frame}
 
 \begin{frame}
-  \only<1>{\minionhigh{Process data}}
-  \only<2>{\minionhigh{\ldots sausage factory}}
-  \only<3>{\minionhigh{Makefile}}
+  \only<1>{\minionhigh{Process data}}%
+  \only<2>{\minionhigh{\ldots sausage factory}}%
+  \only<3>{\minionhigh{Makefile}}%
   \bottomhalf{%
     \includegraphics<3>[height=4ex]{snippets/make_process1}\\[1ex]
     \includegraphics[width=.85\paperwidth]{diagrams/make_workflow_process1}}
@@ -649,14 +658,11 @@
     \includegraphics[width=.85\paperwidth]{diagrams/make_workflow_simulation}}
 \end{frame}
 
-% TODO: Need to pull all these points onto slides.  Can just list them
-% one after another on a single slide, or on a series of slides.
 \begin{frame}
-  \hero{Workflows\\[-.7ex]\color{b-green} make}
-  \lowerhalf{Why doesn't everyone use this all the time?}
+  \minionhigh{{\color{b-green}make:}\\[-.4ex]Self-documenting workflow}
+  \bottomhalf{\includegraphics[width=.85\paperwidth]{diagrams/make_workflow}}
   \note{
     The good:
-
     \begin{itemize}
     \item we end up with a nice definition of "upstream" sources.
     \item once in place, things run nicely, and have a good chance of
@@ -665,7 +671,23 @@
       provide) and generated content that you should be able to blow
       away.  This is really important.
     \end{itemize}
+  }
+\end{frame}
 
+\begin{frame}
+  \hero{Workflows\\[-.7ex]\color{b-green} make}
+  \lowerhalf{Why doesn't everyone use this all the time?}
+\end{frame}
+
+\begin{frame}
+  \herohigh{Barriers to \color{b-green} make}
+  \lowerhalf{
+    \only<1>{{\color{b-pink}\textbf{Lots}} of traps}%
+    \only<2>{Command-line only, arcane tool\\%
+    Comes in several incompatible flavours}%
+    \only<3>{Currently looking for a\\[-.4ex]modern, accessible replacement}%
+  }
+  \note{
     The bad:
     \begin{itemize}
     \item put up a picture of our makefile
@@ -673,15 +695,6 @@
     \item basically needs replacing with something pleasant, R-ish, and
       enjoyable to use
     \item knitr's caching can do this to some degree, but I find it fragile.
-    \end{itemize}
-  }
-\end{frame}
-
-\begin{frame}
-  \hero{Workflows\\[-.7ex]\color{b-green} make}
-  \lowerhalf{Prospects?}
-  \note{
-    \begin{itemize}
     \item where I hope we can go is a declarative style ``this function
       depends on these things and produces this thing'' that can be used
       to stick together complex analyses.
@@ -697,7 +710,7 @@
 \begin{frame}
   \hero{Automated testing\\[-.4ex]\color{b-pink} travis-CI}
   \lowerhalf{Will it work elsewhere?}
-  \bottomleft{\href{http://travis-ci.org}{http://travis-ci.org}}
+  \bottomleft{\href{http://travis-ci.org}{travis-ci.org}}
   \note{
     Getting into extra-for-experts territory here
 
@@ -764,12 +777,6 @@
 \end{frame}
 
 \begin{frame}
-  \minionhigh{Configuration: .travis.yml}
-  \bottomhanging{\includegraphics[width=.8\paperwidth]{snippets/travis_config}}
-  \bottomleft{travis tool: \href{https://github.com/craigcitro/r-travis/}{https://github.com/craigcitro/r-travis/}}
-\end{frame}
-
-\begin{frame}
   \minionhigh{%
     \only<1>{Spins up virtual machine}%
     \only<2>{Installs dependencies}%
@@ -783,6 +790,12 @@
     \includegraphics<4>[width=\paperwidth]{shots/travis_log_4_knitr}%
     \includegraphics<5>[width=\paperwidth]{shots/travis_log_5_ms}%
   }
+\end{frame}
+
+\begin{frame}
+  \minionhigh{Configuration: .travis.yml}
+  \bottomhanging{\includegraphics[width=.8\paperwidth]{snippets/travis_config}}
+  \bottomleft{travis-CI for R: \href{https://github.com/craigcitro/r-travis/}{github.com/craigcitro/r-travis/}}
 \end{frame}
 
 \begin{frame}
@@ -806,8 +819,22 @@
 \end{frame}
 
 \begin{frame}
-  \hero{Automated testing\\[-.4ex]\color{b-pink} travis-CI}
-  \lowerhalf{Prospects?}
+  \herohigh{Barriers to \color{b-pink} travis-CI}
+  \lowerhalf{%
+    \only<1>{Project must be reproducible \textbf{first}}%
+    \only<2>{Only for open source, or pay}%
+    \only<3>{Ill-suited for long running jobs, sensitive data}%
+  }
+  \note{
+    I think that this is the future though.  If we had used this from
+    the beginning, our project would have hit fewer hurdles later.
+    \begin{itemize}
+    \item CI platforms focussed on research probably not far away.
+    \item Several self-hosted solutions that institutions could easily
+      set up: Atlassian Bamboo, Jenkins, possibly Drone.  Or pay for a
+      hosted solution on Amazon, Digital Ocean.
+    \end{itemize}
+  }
 \end{frame}
 
 \begin{frame}
@@ -822,7 +849,7 @@
     \only<1-2>{Identify dependencies}%
     \only<3>{\ldots\,\& their dependencies}
   }
-  \bottomhalf{%
+  \bottomhangingleft{%
     \texttt{packrat::init()}\\
     \includegraphics<1>[width=.6\paperwidth]{snippets/packrat_identify}%
     \includegraphics<2>[width=.8\paperwidth]{snippets/packrat_metadata}%
@@ -834,7 +861,7 @@
   \minionhigh{%
     Project is now isolated from system
   }
-  \bottomhalf{%
+  \bottomhangingleft{%
     \includegraphics[width=.8\paperwidth]{snippets/packrat_startup}%
   }
 \end{frame}
@@ -844,8 +871,10 @@
   \lowerhalf{Why doesn't everyone use this all the time?}
 \end{frame}
 
+% TODO: Get a few bits here.
+
 \begin{frame}
-  \inthemiddle{\includegraphics[width=\paperwidth]{pics/alice}}
+  \inthemiddle{\includegraphics[height=\paperheight]{pics/alice}}
 \end{frame}
 
 \begin{frame}
@@ -861,6 +890,10 @@
     ($(current page.east) + (-0.15\paperwidth, -.17\paperheight)$) {%
       46\%
     };
+    \node<2>[anchor=south east] at (current page.south east) {
+      \small\color{white}%
+      \href{http://richfitz.github.io/wood}{richfitz.github.io/wood}
+    };
   \end{tikzpicture}
 \end{frame}
 
@@ -869,6 +902,7 @@
   \only<1>{\herohigh{GNU make}}%
   \only<3>{\herohigh{git}}%
   \only<4>{\herohigh{travis-CI}}%
+  % TODO: Add packrat here!
   \bottomhalf{%
     \includegraphics<2>[width=.85\paperwidth]{diagrams/process_knitr}%
     \includegraphics<1>[width=.85\paperwidth]{diagrams/process_make}%
@@ -886,13 +920,73 @@
         cd wood\\
         make deps all
       \end{minipage}
+      \\[1em]
+      \scriptsize\color{b-grey}\ldots\,provided you have C,
+      C++ \& Fortran compilers, make, GNU scientific library, LaTeX.
     }
-    \only<3>{probably unrealistic at the moment}}
+    \only<3>{Probably unrealistic at the moment}}
 \end{frame}
 
 \begin{frame}
   \hero{{\color{b-green}Partially}\\[-.7ex]reproducible}
-  \lowerhalf{It's not just good -- it's good enough}
+  \lowerhalf{
+    \only<1>{It's not just good -- it's good enough}%
+    \only<2>{Good faith effort at documenting requirements\\
+      makes it \textbf{much} easier to pick up}%
+  }
+\end{frame}
+
+\begin{frame}
+  \herohigh{\color{b-pink}Acknowledgements}
+  
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node [anchor=north, align=left] at
+    ($(current page.center) + (0, .17\paperheight)$) {%
+      \begin{tabular}{c l}
+        \raisebox{-.03\paperheight}{%
+          \includegraphics[height=.12\paperheight]{pics/people/pennell}}&
+        Matt Pennell
+        \small\color{b-grey}\twitterhandle{mwpennell}\\
+        \raisebox{-.03\paperheight}{%
+          \includegraphics[height=.12\paperheight]{pics/people/cornwell}}&
+        Will Cornwell
+        \small\color{b-grey}\twitterhandle{will_cornwell}\\
+        \raisebox{-.03\paperheight}{%
+          \includegraphics[height=.12\paperheight]{pics/people/zanne}}&
+        Amy Zanne
+        \small\color{b-grey}\twitterhandle{amyzanne}\\
+        \raisebox{-.03\paperheight}{%
+          \includegraphics[height=.12\paperheight]{pics/people/tank}}&
+        Dave Tank
+        \small\color{b-grey}\twitterhandle{dave_tank}\\
+        \raisebox{-.03\paperheight}{%
+          \includegraphics[height=.12\paperheight]{pics/people/stevens}}&
+        Peter Stevens\\
+      \end{tabular}
+  };
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+  \herohigh{\color{b-blue}Resources}
+  
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node[anchor=north west,align=left,font=\small] at
+    ($(current page.west) + (0.05\paperwidth, .17\paperheight)$) {
+      \begin{tabular}{r>{\color{b-grey}\footnotesize}l}
+      Paper \& analysis&
+      \hrefp{http}{richfitz.github.io/wood}\\
+      This talk&
+      \hrefp{https}{github.com/richfitz/reproducibility-2014}\\
+      Software Carpentry&
+      \hrefp{http}{software-carpentry.org}\\
+      git&\hrefp{http}{git-scm.com}\\
+      knitr&\hrefp{http}{yihui.name/knitr}\\
+      travis-CI&\hrefp{http}{travis-ci.org}\\
+      travis-CI for R&\hrefp{https}{github.com/craigcitro/r-travis/}\\
+    \end{tabular}
+  };
+  \end{tikzpicture}
 \end{frame}
 
 \end{document}
