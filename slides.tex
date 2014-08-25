@@ -114,6 +114,14 @@
   \end{tikzpicture}
 }
 
+\newcommand{\bottomhangingleft}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node[anchor=north west] at
+    ($(current page.west) + (0.05\paperwidth, .17\paperheight)$) {
+      #1
+    };
+  \end{tikzpicture}
+}
 
 \begin{document}
 
@@ -129,20 +137,19 @@
 \setbeamertemplate{itemize item}{\raisebox{.33ex}{\footnotesize\color{white}$\blacktriangleright$}}
 
 \begin{frame}
-  \color{b-blue}
   \begin{tikzpicture}[remember picture, overlay]
     \node (A) at ($(current page.center) + (0, .17\paperheight)$) {
       \resizebox{.9\paperwidth}{!}{%
-        \bf Reproducible research}
+        \color{b-blue}\bf Reproducible research}
     };
     \node[anchor=north] at (A.south) {
       \resizebox{.9\paperwidth}{!}{%
-        current challenges and future prospects}
+        \color{b-green}current challenges and future prospects}
     };
     \color{white}
     \node[anchor=south west] (B) at
     ($(current page.south west) + (0.05\paperwidth, 0.05\paperwidth)$) {
-      \color{b-grey}@phylorich
+      \color{b-grey}\href{https://twitter.com/phylorich}{@phylorich}
     };
     \node[anchor=south west] at (B.north west) {
       Rich FitzJohn
@@ -182,20 +189,21 @@
 % interested.
 
 \begin{frame}
-  \hero{R can be\\[-.7ex]\color{b-pink} Irreproducible}
+  \hero{R can be\\[-.7ex]\color{b-pink} irreproducible}
   \lowerhalf{
-    \only<1>{\texttt{setwd({\color{b-orange}"myproject/final2/works"})}}%
-    \only<2>{Graphs that need manual tweaking}%
-    \only<3>{Manually edit your input}%
-    \only<4>{Undocumented dependencies}%
+    \only<2>{\texttt{setwd({\color{b-orange}"myproject/final2/works"})}}%
+    \only<3>{Graphs that need manual tweaking}%
+    \only<4>{Manually edit your input}%
+    \only<5>{Undocumented dependencies}%
   }
 \end{frame}
 
 \begin{frame}
-  \only<1,3>{\hero{R can be\\[-.7ex]\color{b-green} Reproducible}}
-  \only<2>{\inthemiddle{\includegraphics[height=.8\paperheight]{pics/draw_an_owl}}}
+  \hero{R can be\\[-.7ex]\color{b-green} reproducible}
   \lowerhalf{
-    \only<3>{\ldots but this is mostly about the tools \textbf{around} R}
+    \only<1>{Don't do those things}%
+    \only<2>{Reproducibility depends on\\
+      tools \& workflows \textbf{around} R}
   }
   \note{
     R can be reproducible, but getting it to do so can be hard.
@@ -211,6 +219,22 @@
   }
 \end{frame}
 
+% TODO: Need some colour here?
+\begin{frame}
+  \herohigh{Simple case of\\[-.7ex]reproducible research}
+
+  \lowerhalf{
+    \begin{minipage}{\textwidth}
+      \begin{itemize}
+      \item Open data
+      \item No experiments
+      \item No confidentiality
+      \item Straightforward analysis
+      \end{itemize}
+    \end{minipage}
+  }
+\end{frame}
+
 \begin{frame}
   \begin{tikzpicture}[remember picture, overlay]
     \node[inner sep=0, outer sep=0] at (current page.center) {
@@ -223,12 +247,12 @@
   \end{tikzpicture}
 \end{frame}
 
+% TODO: true diversity should be in grey.
 \begin{frame}
-  \minionhigh{How many plant species are woody?}
-  \bottomhalf{%
-    \includegraphics<1>[width=.8\paperwidth]{diagrams/diversity_venn0}%
-    \includegraphics<2>[width=.8\paperwidth]{diagrams/diversity_venn1}%
-    \includegraphics<3>[width=.8\paperwidth]{diagrams/diversity_venn2}}
+  \inthemiddle{%
+    \includegraphics<1>[width=.9\paperwidth]{diagrams/diversity_venn0}%
+    \includegraphics<2>[width=.9\paperwidth]{diagrams/diversity_venn1}%
+    \includegraphics<3>[width=.9\paperwidth]{diagrams/diversity_venn2}}
 \end{frame}
 
 \begin{frame}
@@ -252,33 +276,21 @@
 \end{frame}
 
 \begin{frame}
-  \herohigh{Simple case of\\[-.7ex]reproducible research}
-
-  \lowerhalf{
-    \begin{minipage}{\textwidth}
-      \begin{itemize}
-      \item Open data
-      \item No experiments
-      \item No confidentiality
-      \item Straightforward analysis
-      \end{itemize}
-    \end{minipage}
-  }
-\end{frame}
-
-\begin{frame}
   \herohigh{Tools we used}
-  \lowerhalf{
-    \begin{minipage}{\textwidth}
-      \begin{itemize}
-      \item {\color{b-orange}\bf knitr}: what are we trying to make work?
-      \item {\color{b-purple}\bf git}: I swear it used to work
-      \item {\color{b-green}\bf make}: it takes a while to make it work
-      \item {\color{b-pink}\bf travis-ci}: will it work elsewhere?
-      \item {\color{b-blue}\bf packrat}: will it work later?
-      \end{itemize}
-    \end{minipage}
-  }
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node[anchor=west,font=\normalsize, align=left] at
+    ($(current page.west) + (0.05\paperwidth, -.18\paperheight)$) {%
+      \begin{minipage}{\textwidth}
+        \begin{itemize}
+        \item {\color{b-orange}\bf knitr}: what are we trying to make work?
+        \item {\color{b-purple}\bf git}: I swear it used to work
+        \item {\color{b-green}\bf make}: it takes a while to make it work
+        \item {\color{b-pink}\bf travis-CI}: will it work elsewhere?
+        \item {\color{b-blue}\bf packrat}: will it work later?
+        \end{itemize}
+      \end{minipage}
+    };
+  \end{tikzpicture}
 \end{frame}
 
 \begin{frame}
@@ -312,13 +324,15 @@
     \only<1>{Mix documentation \& code}%
     \only<2>{Run through knitr to run code}%
     \only<3>{Render markdown to HTML}%
-    \only<4>{\ldots\,or to LaTeX}%
+    \only<4>{\ldots\,or to LaTeX}\phantom{g}%
   }
-  \bottomhalf{%
-    \includegraphics<1>[width=.6\textwidth]{snippets/knitr_source}%
-    \includegraphics<2>[width=.6\textwidth]{snippets/knitr_processed}%
-    \includegraphics<3>[width=.75\textwidth]{snippets/knitr_html}%
-    \includegraphics<4>[width=.75\textwidth]{snippets/knitr_latex}%
+  \bottomhanging{%
+    \begin{minipage}{.75\textwidth}
+      \includegraphics<1>[height=.6\paperheight]{snippets/knitr_source}%
+      \includegraphics<2>[height=.6\paperheight]{snippets/knitr_processed}%
+      \includegraphics<3>[height=.6\paperheight]{snippets/knitr_html}%
+      \includegraphics<4>[height=.6\paperheight]{snippets/knitr_latex}%
+    \end{minipage}
   }
 \end{frame}
 
@@ -328,7 +342,7 @@
     \begin{tabular}{lll}
       \raisebox{3em}{%
         \includegraphics[width=.3\textwidth]{snippets/knitr_source}}&
-      \raisebox{1em}{%
+      \raisebox{1.5em}{%
         \includegraphics[width=.3\textwidth]{snippets/knitr_processed}}&
     \includegraphics[width=.375\textwidth]{snippets/knitr_html}
     \end{tabular}
@@ -336,32 +350,34 @@
 \end{frame}
 
 \begin{frame}
-  \minionhigh{Handles graphics automatically}
-  \bottomhalf{
-    \includegraphics<1>[width=.7\textwidth]{snippets/knitr_graphics_source}%
-    \includegraphics<2>[width=.9\textwidth]{snippets/knitr_graphics_processed}%
-    \includegraphics<3>[width=.7\textwidth]{snippets/knitr_graphics_output}
+  \minionhigh{Graphics handled automatically}
+  \bottomhanging{
+    \begin{minipage}{.9\paperwidth}
+      \includegraphics<1>[width=.7\paperwidth]{snippets/knitr_graphics_source}%
+      \includegraphics<2>[width=.9\paperwidth]{snippets/knitr_graphics_processed}%
+      \includegraphics<3>[width=.7\paperwidth]{snippets/knitr_graphics_output}
+    \end{minipage}
   }
 \end{frame}
 
 \begin{frame}
-  \minionhigh{Caches long-running computation}
-  \bottomhalf{
+  \minionhigh{Cache long-running computation}
+  \bottomhangingleft{
     \includegraphics[width=.6\textwidth]{snippets/knitr_cache_source}%
   }
 \end{frame}
 
 \begin{frame}
   \minionhigh{Control what is displayed}
-  \bottomhalf{
+  \bottomhangingleft{
     \begin{tabular}[t]{ll}
-      \only<1-2>{\imagetop{\includegraphics[width=.5\textwidth]{snippets/knitr_display1_source}}}%
-      \only<3-4>{\imagetop{\includegraphics[width=.5\textwidth]{snippets/knitr_display2_source}}}%
-      \only<5-6>{\imagetop{\includegraphics[width=.5\textwidth]{snippets/knitr_display3_source}}}%
+      \only<1-2>{\imagetop{\includegraphics[height=.45\paperheight]{snippets/knitr_display1_source}}}%
+      \only<3-4>{\imagetop{\includegraphics[height=.45\paperheight]{snippets/knitr_display2_source}}}%
+      \only<5-6>{\imagetop{\includegraphics[height=.45\paperheight]{snippets/knitr_display3_source}}}%
       &
-      \only<2>{\imagetop{\includegraphics[width=.5\textwidth]{snippets/knitr_display1_processed}}}%
-      \only<4>{\imagetop{\includegraphics[width=.5\textwidth]{snippets/knitr_display2_processed}}}%
-      \only<6>{\imagetop{\includegraphics[width=.5\textwidth]{snippets/knitr_display3_processed}}}%
+      \only<2>{\imagetop{\includegraphics[height=.45\paperheight]{snippets/knitr_display1_processed}}}%
+      \only<4>{\imagetop{\includegraphics[height=.45\paperheight]{snippets/knitr_display2_processed}}}%
+      \only<6>{\imagetop{\includegraphics[height=.45\paperheight]{snippets/knitr_display3_processed}}}%
     \end{tabular}
 }
 \end{frame}
@@ -450,21 +466,21 @@
 \end{frame}
 
 \begin{frame}
-  \herohigh{Store metadata}
+  \herohigh{Store metadata\phantom{y}}
   \bottomhalf{\includegraphics[width=.75\paperwidth]{diagrams/version_control_metadata}}
 \end{frame}
 
 \begin{frame}
-  \only<1>{\herohigh{\ldots for every version}}%
+  \only<1>{\herohigh{\ldots\,for every version}}%
   \only<2>{\herohigh{git add; git commit}}
-  \bottomhalf{\includegraphics[width=.75\paperwidth]{diagrams/version_control_add_commit}}
+  \bottomhanging{\includegraphics[width=.75\paperwidth]{diagrams/version_control_add_commit}}
 \end{frame}
 
 \begin{frame}
   % TODO: Separate off the log/diff arrow
   \only<1-2>{\herohigh{Query what changed}}%
   \only<3>{\herohigh{git diff; git log}}%
-  \bottomhalf{%
+  \bottomhanging{%
     \includegraphics<1>[width=.75\paperwidth]{diagrams/version_control_compare1}%
     \includegraphics<2->[width=.75\paperwidth]{diagrams/version_control_compare2}%
   }
@@ -474,7 +490,7 @@
   % TODO: Split the image into sections: 6, 6->7, 6->7->6'
   \only<1-2>{\herohigh{Undo mistakes}}%
   \only<3>{\herohigh{git revert}}%
-  \bottomhalf{%
+  \bottomhanging{%
     \includegraphics<1>[width=.75\paperwidth]{diagrams/version_control_revert1}%
     \includegraphics<2->[width=.75\paperwidth]{diagrams/version_control_revert2}%
     }
@@ -482,20 +498,20 @@
 
 \begin{frame}
   \herohigh{Collaboration}%
-  \only<1>{\lowerhalf{\LARGE R + {\color{b-purple} git} = nice}}%
+  \only<1>{\lowerhalf{\LARGE R + {\color{b-purple} git} = nice}\phantom{\heart}}%
   \only<2>{\lowerhalf{\LARGE R + {\color{b-purple} git} + {\color{b-orange}GitHub} = {\color{b-pink}\heart}}}%
   \only<3>{\lowerhalf{\LARGE R + {\color{b-purple} git} + {\color{b-orange}BitBucket} = {\color{b-pink}\heart}}}
 \end{frame}
 
 \begin{frame}
-  \only<1>{\minionhigh{Work on same code base}}%
-  \only<2>{\minionhigh{See what's being changed}}%
-  \only<3>{\minionhigh{Who changed it?}}%
+  \only<1>{\minionhigh{Work on same code base\phantom{g}}}%
+  \only<2>{\minionhigh{See what changed}}%
+  \only<3>{\minionhigh{See who changed it}}%
   \only<4>{\minionhigh{git blame}}%
-  \bottomhalf{%
-    \includegraphics<1>[width=.85\paperwidth]{shots/version_control_collaboration}%
-    \includegraphics<2>[width=.85\paperwidth]{shots/version_control_changes}%
-    \includegraphics<3-4>[width=.85\paperwidth]{shots/version_control_blame}%
+  \bottomhanging{%
+    \includegraphics<1>[width=\paperwidth]{shots/version_control_collaboration}%
+    \includegraphics<2>[width=\paperwidth]{shots/version_control_changes}%
+    \includegraphics<3-4>[width=\paperwidth]{shots/version_control_blame}%
     }
 \end{frame}
 
@@ -518,32 +534,32 @@
 \end{frame}
 
 \begin{frame}
-  \hero{Barriers to \color{b-purple} git}
-  \lowerhalf{%
-    \note{Git is famously difficult to learn.  There are arguably
-      easier tools out there (e.g., mercurial) but few with as wide
-      adoption by scientists.  99\% of the time, git is very easy to
-      use; add and commit, add and commit, push.}%
+  \herohigh{Barriers to \color{b-purple} git}
+  \bottomhanging{%
     \includegraphics<1>[width=.7\paperwidth]{shots/git-hard}%
-    \only<2>{%
-      ``It is easy to shoot your foot off with git,\\[-.2ex]
-      but also easy to revert to a previous foot\\[-.2ex]
-      and merge it with your current leg.''
+    \only<2>{
+      \begin{minipage}{1.0\linewidth}\color{b-blue}
+        ``It is easy to shoot your foot off with git,\\[-.2ex]
+        but also easy to revert to a previous foot\\[-.2ex]
+        and merge it with your current leg.''
+      \end{minipage}
     }%
     \only<3>{%
       \begin{minipage}{1.0\linewidth}\tt\small\raggedright
         git rebase -s recursive -X theirs origin/master
       \end{minipage}%
     }%
-
   }
+  \only<2>{\bottomleft{Jack William Bell: http://perl.plover.com/classes/git/samples/slide034.html}}
 \end{frame}
 
 \begin{frame}
   \herohigh{Barriers to \color{b-purple} git}
-  \bottomhalf{%
+  \bottomhanging{%
     \includegraphics<1>[width=.7\paperwidth]{pics/xkcd_git_commit}%
   }
+  \bottomleft{%
+    \only<1>{\href{http://xkcd.com/1296/}{http://xkcd.com/1296/}}}
   \lowerhalf{%
     \includegraphics<2>[width=.233\paperwidth]{pics/word_icon}
     \hspace{.05\paperwidth}
@@ -551,8 +567,6 @@
     \hspace{.05\paperwidth}
     \includegraphics<2>[width=.233\paperwidth]{pics/database_icon}
   }
-  \bottomleft{%
-    \only<1>{\href{http://xkcd.com/1296/}{http://xkcd.com/1296/}}}
 
   \note{Git requires discipline.  It requires buy-in from all team
     members.  It doesn't play particularly well with big binary files,
@@ -681,7 +695,7 @@
 \end{frame}
 
 \begin{frame}
-  \hero{Continuous\\[-.7ex]integration\\[-.4ex]\color{b-pink} travis-CI}
+  \hero{Automated testing\\[-.4ex]\color{b-pink} travis-CI}
   \lowerhalf{Will it work elsewhere?}
   \bottomleft{\href{http://travis-ci.org}{http://travis-ci.org}}
   \note{
@@ -736,12 +750,13 @@
 \end{frame}
 
 \begin{frame}
-  \minionhigh{\LARGE CI = Continuous Integration}
+  \minionhigh{\LARGE{\color{b-pink} CI} = \color{b-blue}Continuous Integration}
   \lowerhalf{
     \begin{minipage}{\textwidth}
       \begin{enumerate}
       \item Commit changes
-      \item \only<1>{Make sure nothing breaks}\only<2>{Push to GitHub\phantom{g}}
+      \item \only<1>{Make sure nothing breaks}%
+        \only<2>{Push to GitHub\phantom{g}}
       \end{enumerate}
     \end{minipage}
   }
@@ -749,18 +764,18 @@
 \end{frame}
 
 \begin{frame}
-  \minionhigh{.travis.yml}
+  \minionhigh{Configuration: .travis.yml}
   \bottomhanging{\includegraphics[width=.8\paperwidth]{snippets/travis_config}}
   \bottomleft{travis tool: \href{https://github.com/craigcitro/r-travis/}{https://github.com/craigcitro/r-travis/}}
 \end{frame}
 
 \begin{frame}
   \minionhigh{%
-    \only<1>{Spin up virtual machine}%
-    \only<2>{Install dependencies}%
-    \only<3>{Download and pre-process data}%
-    \only<4>{Run \color{b-orange}knitr\phantom{p}}%
-    \only<5>{Compile manuscript}}
+    \only<1>{Spins up virtual machine}%
+    \only<2>{Installs dependencies}%
+    \only<3>{Downloads and pre-process data}%
+    \only<4>{Runs \color{b-orange}knitr\phantom{p}}%
+    \only<5>{Compiles manuscript}}
   \bottomhanging{%
     \includegraphics<1>[width=\paperwidth]{shots/travis_log_1_spinup}%
     \includegraphics<2>[width=\paperwidth]{shots/travis_log_2_deps}%
@@ -786,13 +801,13 @@
 \end{frame}
 
 \begin{frame}
-  \hero{Continuous\\[-.7ex]integration\\[-.4ex]\color{b-pink} travis-CI}
+  \hero{Automated testing\\[-.4ex]\color{b-pink} travis-CI}
   \lowerhalf{Why doesn't everyone use this all the time?}
 \end{frame}
 
 \begin{frame}
-  \hero{Continuous\\[-.7ex]integration\\[-.4ex]\color{b-pink} travis-CI}
-  \lowerhalf{Prospects}
+  \hero{Automated testing\\[-.4ex]\color{b-pink} travis-CI}
+  \lowerhalf{Prospects?}
 \end{frame}
 
 \begin{frame}
@@ -853,7 +868,7 @@
   \only<2>{\herohigh{knitr}}%
   \only<1>{\herohigh{GNU make}}%
   \only<3>{\herohigh{git}}%
-  \only<4>{\herohigh{travis-ci}}%
+  \only<4>{\herohigh{travis-CI}}%
   \bottomhalf{%
     \includegraphics<2>[width=.85\paperwidth]{diagrams/process_knitr}%
     \includegraphics<1>[width=.85\paperwidth]{diagrams/process_make}%
@@ -865,7 +880,7 @@
 \begin{frame}
   \hero{{\color{b-green}100\%}\\[-.7ex]reproducible}
   \lowerhalf{%
-    \only<2>{
+    \only<2>{\color{b-blue}
       \begin{minipage}{1.0\linewidth}\tt\footnotesize\raggedright
         git clone https://github.com/richfitz/wood/\\
         cd wood\\
