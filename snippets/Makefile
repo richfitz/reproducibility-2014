@@ -1,6 +1,8 @@
 TARGETS = \
 	$(shell ls make_*tex | sed 's/tex$$/pdf/g') \
-	$(shell ls knitr_*tex | sed 's/tex$$/pdf/g')
+	$(shell ls knitr_*tex | sed 's/tex$$/pdf/g') \
+	$(shell ls packrat_*tex | sed 's/tex$$/pdf/g') \
+	$(shell ls travis_*tex | sed 's/tex$$/pdf/g')
 
 all: ${TARGETS}
 

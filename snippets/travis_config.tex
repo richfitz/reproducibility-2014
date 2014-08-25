@@ -1,0 +1,16 @@
+\documentclass[class=minimal,border=0]{standalone}
+\input{snippet}
+\begin{document}%
+\begin{BVerbatim}[bgcolor=b-darkgrey]
+\color{b-green}script:
+\color{b-green}    - make cache-unpack
+\color{b-green}    - make
+\color{b-blue}install:
+\color{b-blue}    - ./travis-tool.sh install_deps
+\color{b-blue}    - ./travis-tool.sh github_package richfitz/diversitree
+\color{b-purple}before_install:
+\color{b-purple}    - curl -OL http://raw.github.com/craigcitro/...
+\color{b-purple}    - chmod 755 ./travis-tool.sh
+\color{b-purple}    - ./travis-tool.sh bootstrap
+\end{BVerbatim}
+\end{document}

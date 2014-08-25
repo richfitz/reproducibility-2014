@@ -97,6 +97,24 @@
   \end{tikzpicture}
 }
 
+\newcommand{\bottomright}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node[anchor=south east, align=right,font=\footnotesize] at (current page.south east) {%
+      #1
+    };
+  \end{tikzpicture}
+}
+
+\newcommand{\bottomhanging}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node[anchor=north] at
+    ($(current page.center) + (0, .17\paperheight)$) {
+      #1
+    };
+  \end{tikzpicture}
+}
+
+
 \begin{document}
 
 \setbeamercolor*{palette primary}{fg=white,bg=b-darkgrey}
@@ -107,6 +125,7 @@
 
 \setbeamertemplate{navigation symbols}{}
 \setbeamercolor{itemize/enumerate body}{fg=white}
+\setbeamercolor{enumerate item}{fg=white}
 \setbeamertemplate{itemize item}{\raisebox{.33ex}{\footnotesize\color{white}$\blacktriangleright$}}
 
 \begin{frame}
@@ -417,6 +436,7 @@
   \hero{Verson control\\[-.7ex]\color{b-purple}{git}}
   \lowerhalf{I swear it used to work}
   \bottomleft{\href{http://git-scm.com}{http://git-scm.com}}
+  \bottomright{See also\\[-.2ex]\href{http://mercurial.selenic.com}{\color{b-purple}\small mercurial}}
 
   \note{This is in here even though it's entirely orthoganal to
     reproducibiliy.  In theory you could run a research program that
@@ -716,9 +736,97 @@
 \end{frame}
 
 \begin{frame}
+  \minionhigh{\LARGE CI = Continuous Integration}
+  \lowerhalf{
+    \begin{minipage}{\textwidth}
+      \begin{enumerate}
+      \item Commit changes
+      \item \only<1>{Make sure nothing breaks}\only<2>{Push to GitHub\phantom{g}}
+      \end{enumerate}
+    \end{minipage}
+  }
+  \note{}
+\end{frame}
+
+\begin{frame}
+  \minionhigh{.travis.yml}
+  \bottomhanging{\includegraphics[width=.8\paperwidth]{snippets/travis_config}}
+  \bottomleft{travis tool: \href{https://github.com/craigcitro/r-travis/}{https://github.com/craigcitro/r-travis/}}
+\end{frame}
+
+\begin{frame}
+  \minionhigh{%
+    \only<1>{Spin up virtual machine}%
+    \only<2>{Install dependencies}%
+    \only<3>{Download and pre-process data}%
+    \only<4>{Run \color{b-orange}knitr\phantom{p}}%
+    \only<5>{Compile manuscript}}
+  \bottomhanging{%
+    \includegraphics<1>[width=\paperwidth]{shots/travis_log_1_spinup}%
+    \includegraphics<2>[width=\paperwidth]{shots/travis_log_2_deps}%
+    \includegraphics<3>[width=\paperwidth]{shots/travis_log_3_process}%
+    \includegraphics<4>[width=\paperwidth]{shots/travis_log_4_knitr}%
+    \includegraphics<5>[width=\paperwidth]{shots/travis_log_5_ms}%
+  }
+\end{frame}
+
+\begin{frame}
+  \minionhigh{Set and forget -- never gets bored}
+  \bottomhanging{
+    \includegraphics[width=\paperwidth]{shots/travis_builds}%
+  }
+  \bottomleft{\href{https://travis-ci.org/richfitz/wood/builds}{https://travis-ci.org/richfitz/wood/builds}}
+\end{frame}
+
+\begin{frame}
+  \minionhigh{Find out what/who broke the project}
+  \bottomhanging{%
+    \includegraphics<1>[width=\paperwidth]{shots/travis_broken1}%
+    \includegraphics<2>[width=\paperwidth]{shots/travis_broken2}}
+\end{frame}
+
+\begin{frame}
+  \hero{Continuous\\[-.7ex]integration\\[-.4ex]\color{b-pink} travis-CI}
+  \lowerhalf{Why doesn't everyone use this all the time?}
+\end{frame}
+
+\begin{frame}
+  \hero{Continuous\\[-.7ex]integration\\[-.4ex]\color{b-pink} travis-CI}
+  \lowerhalf{Prospects}
+\end{frame}
+
+\begin{frame}
   \hero{Dependencies\\[-.7ex]\color{b-blue} packrat}
   \bottomleft{\href{http://rstudio.github.io/packrat}{http://rstudio.github.io/packrat}}
   \lowerhalf{Will it work later?}
+  \bottomright{See also\\[-.2ex]\href{https://github.com/opower/rbundler}{\color{b-blue}\small rbundler}}
+\end{frame}
+
+\begin{frame}
+  \minionhigh{%
+    \only<1-2>{Identify dependencies}%
+    \only<3>{\ldots\,\& their dependencies}
+  }
+  \bottomhalf{%
+    \texttt{packrat::init()}\\
+    \includegraphics<1>[width=.6\paperwidth]{snippets/packrat_identify}%
+    \includegraphics<2>[width=.8\paperwidth]{snippets/packrat_metadata}%
+    \includegraphics<3>[width=.8\paperwidth]{snippets/packrat_metadata2}%
+  }
+\end{frame}
+
+\begin{frame}
+  \minionhigh{%
+    Project is now isolated from system
+  }
+  \bottomhalf{%
+    \includegraphics[width=.8\paperwidth]{snippets/packrat_startup}%
+  }
+\end{frame}
+
+\begin{frame}
+  \hero{Dependencies\\[-.7ex]\color{b-blue} packrat}
+  \lowerhalf{Why doesn't everyone use this all the time?}
 \end{frame}
 
 \begin{frame}
