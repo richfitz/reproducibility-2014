@@ -158,6 +158,76 @@
 \end{frame}
 
 \begin{frame}
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[inner sep=0, outer sep=0] at (current page.center) {
+      \includegraphics[height=\paperheight]{pics/how_much_wood}
+    };
+    \node[anchor=east,align=right,font=\Large\bfseries] (A) at
+    ($(current page.east) + (-0.05\paperwidth, .17\paperheight)$) {%
+      {\color{black}How many} species are woody?
+    };
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+  \minionhigh{How many plant species are woody?}
+  \bottomhalf{%
+    \includegraphics<1>[width=.8\paperwidth]{diagrams/diversity_venn0}%
+    \includegraphics<2>[width=.8\paperwidth]{diagrams/diversity_venn1}%
+    \includegraphics<3>[width=.8\paperwidth]{diagrams/diversity_venn2}}
+\end{frame}
+
+\begin{frame}
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[inner sep=0, outer sep=0] at (current page.center) {
+      \includegraphics[height=\paperheight]{pics/taxonomic_structure}
+    };
+    \node[anchor=east,align=right,font=\Large\bfseries] (A) at
+    ($(current page.east) + (-0.18\paperwidth, .4\paperheight)$) {%
+      {\color{b-darkgrey}Missing data} has structure
+    };
+    \node[anchor=south,font=\Large\bfseries,align=center] at
+    ($(current page.south) + (-0.25\paperwidth, 0)$) {
+      100\%\\[-.7ex]non-woody
+    };
+    \node[anchor=south,font=\Large\bfseries,align=center] at
+    ($(current page.south) + (0.25\paperwidth, 0)$) {
+      \color{b-darkgrey}100\%\\[-.7ex]\color{b-darkgrey}woody
+    };
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+  \herohigh{Simple case of\\[-.7ex]reproducible research}
+
+  \lowerhalf{
+    \begin{minipage}{\textwidth}
+      \begin{itemize}
+      \item Open data
+      \item No experiments
+      \item No confidentiality
+      \item Straightforward analysis
+      \end{itemize}
+    \end{minipage}
+  }
+\end{frame}
+
+\begin{frame}
+  \herohigh{Tools we used}
+  \lowerhalf{
+    \begin{minipage}{\textwidth}
+      \begin{itemize}
+      \item {\color{b-orange}\bf knitr}: what are we trying to make work?
+      \item {\color{b-purple}\bf git}: I swear it used to work
+      \item {\color{b-green}\bf make}: it takes a while to make it work
+      \item {\color{b-pink}\bf travis-ci}: will it work elsewhere?
+      \item {\color{b-blue}\bf packrat}: will it work later?
+      \end{itemize}
+    \end{minipage}
+  }
+\end{frame}
+
+\begin{frame}
   \hero{Literate programming\\[-.7ex]\color{b-orange} knitr}
   \bottomleft{\href{http://yihui.name/knitr}{http://yihui.name/knitr}}
   \lowerhalf{What are we trying to make work?}

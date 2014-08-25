@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="196.00027"
+   height="122.74286"
+   id="svg3079"
+   version="1.1"
+   inkscape:version="0.48.2 r9819"
+   sodipodi:docname="diversity_venn0.svg">
+  <defs
+     id="defs3081" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="79.274323"
+     inkscape:cy="62.134652"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0.3"
+     fit-margin-left="0.3"
+     fit-margin-right="0.3"
+     fit-margin-bottom="0.3"
+     inkscape:window-width="1147"
+     inkscape:window-height="641"
+     inkscape:window-x="42"
+     inkscape:window-y="21"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata3084">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-309.7,-445.63361)">
+    <path
+       transform="matrix(0.32633588,0,0,0.32633588,238.20611,310.43264)"
+       d="m 594.28571,602.36218 c 0,103.35615 -83.78671,187.14286 -187.14286,187.14286 C 303.78671,789.50504 220,705.71833 220,602.36218 c 0,-103.35614 83.78671,-187.14285 187.14285,-187.14285 103.35615,0 187.14286,83.78671 187.14286,187.14285 z"
+       sodipodi:ry="187.14285"
+       sodipodi:rx="187.14285"
+       sodipodi:cy="602.36218"
+       sodipodi:cx="407.14285"
+       id="path3859"
+       style="fill:#969696;fill-opacity:1;stroke:none"
+       sodipodi:type="arc" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#6baed6;fill-opacity:1;stroke:none"
+       id="path3087"
+       sodipodi:cx="407.14285"
+       sodipodi:cy="602.36218"
+       sodipodi:rx="187.14285"
+       sodipodi:ry="187.14285"
+       d="m 594.28571,602.36218 c 0,103.35615 -83.78671,187.14286 -187.14286,187.14286 C 303.78671,789.50504 220,705.71833 220,602.36218 c 0,-103.35614 83.78671,-187.14285 187.14285,-187.14285 103.35615,0 187.14286,83.78671 187.14286,187.14285 z"
+       transform="matrix(0.26717558,0,0,0.26717558,255.57344,339.28285)" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:end;line-height:88.99999857%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Sans Bold"
+       x="369.3298"
+       y="480.93362"
+       id="text3881"
+       sodipodi:linespacing="88.999999%"><tspan
+         sodipodi:role="line"
+         id="tspan3883"
+         x="369.3298"
+         y="480.93362"
+         style="font-size:18px;text-align:end;line-height:88.99999857%;text-anchor:end;fill:#ffffff;fill-opacity:1">known</tspan><tspan
+         sodipodi:role="line"
+         x="369.3298"
+         y="494.48447"
+         id="tspan3885"
+         style="font-size:18px;text-align:end;line-height:72.00000286%;text-anchor:end;fill:#ffffff;fill-opacity:1">species</tspan></text>
+    <text
+       sodipodi:linespacing="88.999999%"
+       id="text3887"
+       y="472.36218"
+       x="421.32349"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:88.99999856999998826%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Sans Bold"
+       xml:space="preserve"><tspan
+         style="font-size:18px;text-align:start;line-height:88.99999856999998826%;text-anchor:start;fill:#ffffff;fill-opacity:1"
+         id="tspan3891"
+         y="472.36218"
+         x="421.32349"
+         sodipodi:role="line">true</tspan><tspan
+         style="font-size:18px;text-align:start;line-height:88.99999856999998826%;text-anchor:start;fill:#ffffff;fill-opacity:1"
+         y="488.38217"
+         x="421.32349"
+         sodipodi:role="line"
+         id="tspan3895">   diversity</tspan></text>
+  </g>
+</svg>
