@@ -339,15 +339,23 @@
 \end{frame}
 
 \begin{frame}
+  % TODO: Separate off the log/diff arrow
   \only<1>{\herohigh{Query what changed}}%
-  \only<2>{\herohigh{git diff; git log}}
-  \bottomhalf{\includegraphics[width=.75\paperwidth]{diagrams/version_control_compare}}
+  \only<3>{\herohigh{git diff; git log}}
+  \bottomhalf{%
+    \includegraphics<1>[width=.75\paperwidth]{diagrams/version_control_compare}%
+    \includegraphics<2->[width=.75\paperwidth]{diagrams/version_control_compare}%
+  }
 \end{frame}
 
 \begin{frame}
+  % TODO: Split the image into sections: 6, 6->7, 6->7->6'
   \only<1>{\herohigh{Undo mistakes}}%
-  \only<2>{\herohigh{git revert}}
-  \bottomhalf{\includegraphics[width=.75\paperwidth]{diagrams/version_control_revert}}
+  \only<3>{\herohigh{git revert}}
+  \bottomhalf{%
+    \includegraphics<1>[width=.75\paperwidth]{diagrams/version_control_revert1}%
+    \includegraphics<2->[width=.75\paperwidth]{diagrams/version_control_revert2}%
+    }
 \end{frame}
 
 \begin{frame}
