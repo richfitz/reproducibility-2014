@@ -11,8 +11,6 @@
 \def\rarrow{{\FA \relsize{-1}{\faArrowRight}}}
 \def\imagetop#1{\vtop{\null\hbox{#1}}}
 
-\setbeamertemplate{navigation symbols}{}
-
 \usepackage{tikz}
 \usetikzlibrary{positioning}
 \usetikzlibrary{shapes.geometric}
@@ -25,6 +23,7 @@
 \setsansfont[ItalicFont={* Light},BoldItalicFont={* ExtraLight}]{Yanone Kaffeesatz}
 \setmonofont[Scale=0.75]{Menlo}
 
+% Colours come from colour brewer
 \definecolor{b-blue}{HTML}{6baed6}
 \definecolor{b-darkgrey}{HTML}{2D2D2D}
 \definecolor{b-grey}{HTML}{969696}
@@ -103,7 +102,12 @@
 \setbeamercolor*{palette primary}{fg=white,bg=b-darkgrey}
 \setbeamercolor*{titlelike}{parent=palette primary}
 \setbeamercolor*{normal text}{parent=palette primary}
+\setbeamercolor*{itemize}{parent=palette primary}
 \color{white}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{itemize/enumerate body}{fg=white}
+\setbeamertemplate{itemize item}{\raisebox{.33ex}{\footnotesize\color{white}$\blacktriangleright$}}
 
 \begin{frame}
   \color{b-blue}
@@ -127,6 +131,37 @@
   \end{tikzpicture}
 \end{frame}
 
+% TODO: Background/introduction:
+% alternatively this whole section would work quite happily at the
+% end, and might be nicer there.
+%
+% Science is in a reproducibility crisis
+%  - http://theconversation.com/science-is-in-a-reproducibility-crisis-how-do-we-resolve-it-16998
+% Calls for reproduciblity
+%  - http://www.nature.com/nature/focus/reproducibility/
+%  - http://www.sciencemag.org/content/334/6060/1226
+%  - economist cover
+%  - Examples of hard core checking of reproducibility:
+%    - links here: http://www.economist.com/news/briefing/21588057-scientists-think-science-self-correcting-alarming-degree-it-not-trouble
+%
+%  - http://bit.ly/1rpfAWv
+%
+% Then section on why bother making work reproducible?
+%
+% - code and data or it didn't happen
+% - science generates points to jump off for other people
+% - independent verification
+% - improves rigour?
+%
+% Why don't we do it?
+%  - http://www.zoology.ubc.ca/~repro
+%  - http://cs.brown.edu/~sk/Memos/Examining-Reproducibility/
+%  - http://software-carpentry.org/blog/2013/02/correctness-isnt-compelling.html
+%  - http://ivory.idyll.org/blog/2014-myths-of-computational-reproducibility.html
+% Something here on different types of "reproducibility", from
+% replicating experiments to rerunning analyses.  Clarify where we are
+% interested.
+
 \begin{frame}
   \hero{R can be\\[-.7ex]\color{b-pink} Irreproducible}
   \lowerhalf{
@@ -145,7 +180,7 @@
   }
   \note{
     R can be reproducible, but getting it to do so can be hard.
-    
+
     A good chunk of the problem is that trivial reproducibility is
     \emph{easy}; if you've got a small script and no external
     dependencies, it doesn't really matter what you do -- it's
@@ -312,10 +347,6 @@
 }
 \end{frame}
 
-% TODO: going to take a bit of fleshing out here.
-% TODO: might have to give a bit of background to Markdown too
-% TODO: might have to mention a bit more about latex, and swap out
-% text bits for latex for one example
 \note{Trivial examples are really easy (this is the owl with two
   circles).  There are some really nice features to help with moving
   beyond trivial cases too:
@@ -331,10 +362,12 @@
   but part of the beauty of it is that you don't have to hold a lot in
   your head: it's just really simple and gets out of the way.}
 
+% TODO: Go through and make these into points on a slide I can flip
+% through.
 \begin{frame}
   \hero{Literate programming\\[-.7ex]\color{b-orange} knitr}
   \lowerhalf{Why doesn't everyone use this all the time?}
-  
+
   \note{
     \begin{itemize}
     \item Exposing the sausage factory:
@@ -354,10 +387,12 @@
   }
 \end{frame}
 
+% TODO: Also get this stuff onto slides.  Shiny especially (make a
+% manual animation with some of the toy examples)
 \begin{frame}
   \hero{Literate programming\\[-.7ex]\color{b-orange} knitr}
   \lowerhalf{Prospects?}
-  
+
   \note{
     \begin{itemize}
     \item This field is moving really quickly, and the tools are
@@ -368,6 +403,7 @@
       grab a copy of a paper with this in.  Examples include Ben
       Bolker's paper, my paper, the one Neil on twitter
     \item Things to target knitr: sowsear and knitr's \code{spin}
+      (give an example here)
     \item The \emph{principle} carries over to non-knitr work though:
       the figures should always be regeneratable from the code.  You
       don't need fancy formatting for that to happen though, just a
@@ -386,14 +422,10 @@
     reproducibiliy.  In theory you could run a research program that
     is 100\% reproducible but which never used version control.  But
     it becomes incredibly unlikely}
-
-  % TODO: Describe what version control is.  Use the phdcomic perhaps.
-  %
-  % TODO: Litte diagram showing versions begetting versions
 \end{frame}
 
 \begin{frame}
-  \inthemiddle{\includegraphics[height=.8\paperheight]{pics/phdcomics_version_control}}  
+  \inthemiddle{\includegraphics[height=.8\paperheight]{pics/phdcomics_version_control}}
   \bottomleft{Phd comics: \href{http://www.phdcomics.com/comics/archive.php?comicid=1531}{http://www.phdcomics.com/comics/archive.php?comicid=1531}}
 \end{frame}
 
@@ -491,7 +523,7 @@
 %
 % http://karthik.github.io/useR2014/#data_life_cycle
 % http://theconversation.com/the-reinhart-rogoff-error-or-how-not-to-excel-at-economics-13646
-% 
+%
 \begin{frame}
   \hero{Workflows\\[-.7ex]\color{b-green} make}
   \lowerhalf{It takes a while to make it work}
@@ -530,14 +562,15 @@
 \end{frame}
 
 \begin{frame}
-  \only<1>{\minionhigh{Process data}}
-  \only<2>{\minionhigh{\ldots}}
-  \only<3>{\minionhigh{Makefile}}
+  \only<1>{\minionhigh{Run the actual science bit}}
+  \only<2>{\minionhigh{Makefile}}
   \bottomhalf{%
-    \includegraphics<3>[height=5ex]{snippets/make_simulation}\\[1ex]
+    \includegraphics<2>[height=5ex]{snippets/make_simulation}\\[1ex]
     \includegraphics[width=.85\paperwidth]{diagrams/make_workflow_simulation}}
 \end{frame}
 
+% TODO: Need to pull all these points onto slides.  Can just list them
+% one after another on a single slide, or on a series of slides.
 \begin{frame}
   \hero{Workflows\\[-.7ex]\color{b-green} make}
   \lowerhalf{Why doesn't everyone use this all the time?}
@@ -558,7 +591,7 @@
     \item put up a picture of our makefile
     \item Pretty arcane
     \item basically needs replacing with something pleasant, R-ish, and
-      enjoyable to use 
+      enjoyable to use
     \item knitr's caching can do this to some degree, but I find it fragile.
     \end{itemize}
   }
@@ -572,6 +605,8 @@
     \item where I hope we can go is a declarative style ``this function
       depends on these things and produces this thing'' that can be used
       to stick together complex analyses.
+    \item New web package management things (e.g. ???.io) might help
+      here.
     \item otherwise I consider this one unsolved for current non-computer
       scientists.
     \end{itemize}
@@ -659,8 +694,8 @@
 
 \end{document}
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-PDF-mode: t
 %%% TeX-engine: xetex
-%%% End: 
+%%% End:
