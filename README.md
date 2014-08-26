@@ -1,3 +1,7 @@
+# Rendered version of talk
+
+A pdf is available [here](https://github.com/richfitz/reproducibility-2014/releases/download/v1.0/slides.pdf)
+
 # Compiling:
 
 ```
