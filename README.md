@@ -10,13 +10,13 @@ make
 
 # Requirements:
 
-Fonts
+Fonts (all are freely downloadable)
 
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 * [Yanone Kaffeesatz](https://www.google.com/fonts#UsePlace:use/Collection:Yanone+Kaffeesatz)
-* Menlo (OS X font - not sure about other platforms)
+* [Bitstream Vera Sans Mono](http://ftp.gnome.org/pub/GNOME/sources/ttf-bitstream-vera/1.10/)
 
-XeLaTeX and fontspec so that these fonts can be used
+XeLaTeX (and fontspec) so that these fonts can be used.
 
 Inkscape for SVG to PDF conversion (`diagrams/`).
 
