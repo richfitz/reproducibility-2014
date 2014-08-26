@@ -10,8 +10,22 @@ http://upload.wikimedia.org/wikipedia/en/6/62/Literate_Programming_book_cover.jp
 `phdcomics_version_control.gif`
 http://www.phdcomics.com/comics/archive.php?comicid=1531
 
-`orchid.jpg`
-http://upload.wikimedia.org/wikipedia/commons/2/21/Donkey_orchid_gnangarra_01.jpg
-
 `alice.png`
 http://userpages.umbc.edu/~ikwok1/336/project3/images/1book24%20copy.png
+
+`sausage_factory.png`
+http://simpsonswiki.com/wiki/Springfield_Sausage_Factory
+
+The double images:
+
+`orchid.jpg`
+http://commons.wikimedia.org/wiki/File:Donkey_orchid_gnangarra_01.jpg
+
+`grass.jpg`
+http://scienceimage.csiro.au/image/4447/aristyda-grassland-about-30kms-west-of-charters-towers-qld-/
+
+`forest.jpg`
+http://scienceimage.csiro.au/image/3829/tropical-rainforest-canopy-near-cairns-qld-/
+
+`eucalypt.jpg`
+http://scienceimage.csiro.au/image/4015/bark-patterns-on-a-red-river-gum/

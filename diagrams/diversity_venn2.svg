@@ -25,7 +25,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
-     inkscape:cx="116.06004"
+     inkscape:cx="71.238611"
      inkscape:cy="62.134652"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -36,8 +36,8 @@
      fit-margin-bottom="0.3"
      inkscape:window-width="1147"
      inkscape:window-height="641"
-     inkscape:window-x="42"
-     inkscape:window-y="21"
+     inkscape:window-x="239"
+     inkscape:window-y="122"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata3084">
@@ -104,18 +104,18 @@
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:end;line-height:88.99999857%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Sans Bold"
-       x="369.3298"
-       y="480.93362"
+       x="369.32993"
+       y="480.87958"
        id="text3881"
        sodipodi:linespacing="88.999999%"><tspan
          sodipodi:role="line"
          id="tspan3883"
-         x="369.3298"
-         y="480.93362"
+         x="369.32993"
+         y="480.87958"
          style="font-size:18px;text-align:end;line-height:88.99999857%;text-anchor:end;fill:#ffffff;fill-opacity:1">known</tspan><tspan
          sodipodi:role="line"
-         x="369.3298"
-         y="494.48447"
+         x="369.32993"
+         y="494.43042"
          id="tspan3885"
          style="font-size:18px;text-align:end;line-height:72.00000286%;text-anchor:end;fill:#ffffff;fill-opacity:1">species</tspan></text>
     <text
@@ -196,14 +196,14 @@
     <text
        sodipodi:linespacing="88.999999%"
        id="text3933"
-       y="510.57648"
-       x="322.85718"
+       y="510.63052"
+       x="322.8573"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:88.99999857%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Sans Bold"
        xml:space="preserve"><tspan
          style="font-size:18px;line-height:72.00000286%;fill:#ffffff;fill-opacity:1"
          id="tspan3937"
-         y="510.57648"
-         x="322.85718"
+         y="510.63052"
+         x="322.8573"
          sodipodi:role="line">316,000</tspan></text>
   </g>
 </svg>

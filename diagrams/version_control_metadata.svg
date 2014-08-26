@@ -109,24 +109,24 @@
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz"
        x="-98.994949"
-       y="516.98132"
+       y="514.98132"
        id="text4443"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4445"
          x="-98.994949"
-         y="516.98132">Who</tspan><tspan
+         y="514.98132">Who</tspan><tspan
          sodipodi:role="line"
          x="-98.994949"
-         y="566.98132"
+         y="564.98132"
          id="tspan4447">What</tspan><tspan
          sodipodi:role="line"
          x="-98.994949"
-         y="616.98132"
+         y="614.98132"
          id="tspan4449">When</tspan><tspan
          sodipodi:role="line"
          x="-98.994949"
-         y="666.98132"
+         y="664.98132"
          id="tspan4451">Why</tspan></text>
   </g>
 </svg>

@@ -1,0 +1,99 @@
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc}
+% Useful for pictures.
+\tikzstyle{nopadding} = [inner sep=0cm]
+\tikzstyle{attribution} = [fill=b-darkgrey, anchor=south,
+outer sep=0, inner sep=.1ex, font=\relsize{-6}\it,
+minimum width=\paperwidth, text width=.95\paperwidth]
+
+\newcommand{\hero}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]%
+  \node[anchor=west,align=left,font=\Huge\bfseries] (A) at ($(current page.west) + (0.05\paperwidth, .17\paperheight)$) {%
+    #1
+  };
+\end{tikzpicture}}
+
+\newcommand{\herohigh}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]%
+  \node[anchor=west,align=left,font=\Huge\bfseries] (A) at ($(current page.west) + (0.05\paperwidth, .25\paperheight)$) {%
+    #1
+  };
+\end{tikzpicture}}
+
+\newcommand{\minionhigh}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]%
+  \node[anchor=west,align=left,font=\Large\bfseries] (A) at ($(current page.west) + (0.05\paperwidth, .25\paperheight)$) {%
+    #1
+  };
+\end{tikzpicture}}
+
+\newcommand{\upperhalf}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node[anchor=west,font=\normalsize, align=left] at
+    ($(current page.west) + (0.05\paperwidth, .25\paperheight)$) {%
+      #1
+    };
+  \end{tikzpicture}
+}
+
+\newcommand{\lowerhalf}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node[anchor=west,font=\normalsize, align=left] at
+    ($(current page.west) + (0.05\paperwidth, -.25\paperheight)$) {%
+      #1
+    };
+  \end{tikzpicture}
+}
+
+\newcommand{\bottomhalf}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node[anchor=south west,font=\normalsize, align=left] at
+    ($(current page.south west) + (0.05\paperwidth, 0)$) {%
+      #1
+    };
+  \end{tikzpicture}
+}
+
+\newcommand{\inthemiddle}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node at (current page.center) {%
+      #1
+    };
+  \end{tikzpicture}
+}
+
+\newcommand{\bottomleft}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node[anchor=south west, align=left,font=\footnotesize] at (current page.south west) {%
+      #1
+    };
+  \end{tikzpicture}
+}
+
+\newcommand{\bottomright}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node[anchor=south east, align=right,font=\footnotesize] at (current page.south east) {%
+      #1
+    };
+  \end{tikzpicture}
+}
+
+\newcommand{\bottomhanging}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node[anchor=north] at
+    ($(current page.center) + (0, .17\paperheight)$) {
+      #1
+    };
+  \end{tikzpicture}
+}
+
+\newcommand{\bottomhangingleft}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node[anchor=north west,align=left] at
+    ($(current page.west) + (0.05\paperwidth, .17\paperheight)$) {
+      #1
+    };
+  \end{tikzpicture}
+}
