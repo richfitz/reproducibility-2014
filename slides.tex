@@ -326,7 +326,7 @@
   \lowerhalf{
     \only<2>{Encourages overuse of global variables}%
     \only<3>{Re-running analyses because of\\
-      changed punctuation gets old}%
+      changed punctuation gets annoying}%
     \only<4>{Requires really good editor support}
   }
   \only<4>{%
@@ -568,7 +568,7 @@
 
 \begin{frame}
   \only<1>{\minionhigh{Process data}}%
-  \only<2>{\minionhigh{\ldots sausage factory}}%
+  \only<2>{\minionhigh{\ldots\,the sausage factory}}%
   \only<3>{\minionhigh{Makefile}}%
   \bottomhalf{%
     \includegraphics<3>[height=4ex]{snippets/make_process1}\\[1ex]
@@ -703,11 +703,11 @@
 
 \begin{frame}
   \minionhigh{%
-    \only<1>{Spins up virtual machine}%
-    \only<2>{Installs dependencies}%
-    \only<3>{Downloads and pre-process data}%
-    \only<4>{Runs \color{b-orange}knitr\phantom{p}}%
-    \only<5>{Compiles manuscript}}
+    \only<1>{Spins up virtual machine\ldots}%
+    \only<2>{\ldots installs dependencies\ldots}%
+    \only<3>{\ldots downloads and processes data\ldots}%
+    \only<4>{\ldots runs \color{b-orange}knitr\phantom{p}\ldots}%
+    \only<5>{\ldots \& compiles manuscript.}}
   \bottomhanging{%
     \includegraphics<1>[width=\paperwidth]{shots/travis_log_1_spinup}%
     \includegraphics<2>[width=\paperwidth]{shots/travis_log_2_deps}%
@@ -746,7 +746,7 @@
 \begin{frame}
   \herohigh{Barriers to \color{b-pink} travis-CI}
   \lowerhalf{%
-    \only<1>{Project must be reproducible \textbf{first}}%
+    \only<1>{Project must \textbf{\color{b-green}already be reproducible}}%
     \only<2>{Only for open source, or pay}%
     \only<3>{Ill-suited for long running jobs, sensitive data}%
   }
@@ -854,18 +854,18 @@
         make deps all
       \end{minipage}
       \\[1em]
-      \scriptsize\color{b-grey}\ldots\,provided you have C,
+      \scriptsize\color{b-grey}\ldots provided you have C,
       C++ \& Fortran compilers, make, GNU scientific library, LaTeX.
-    }
+    }%
     \only<3>{Probably unrealistic at the moment}}
 \end{frame}
 
 \begin{frame}
   \hero{{\color{b-green}Partially}\\[-.7ex]reproducible}
   \lowerhalf{
-    \only<1>{It\kern-1pt's not just good -- it\kern-1pt's good enough}%
+    \only<1>{It\kern-.5pt's not just good --- it\kern-.5pt's good enough}%
     \only<2>{Good faith effort at documenting requirements\\
-      makes it \textbf{much} easier to pick up}%
+      makes it \textbf{\color{b-blue}much} easier to pick up}%
   }
 \end{frame}
 
