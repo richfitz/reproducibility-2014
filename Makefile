@@ -1,11 +1,11 @@
-all: slides.pdf
+all: slides.pdf slides_brief.pdf
 
-slides.pdf: slides.tex
+%.pdf: %.tex
 # evil but avoids always rebuilding.  Things like this are why make is
 # annoying to use in practice...
 	make diagrams snippets
-	xelatex slides
-	xelatex slides
+	xelatex $<
+	xelatex $<
 
 diagrams:
 	make -C diagrams
